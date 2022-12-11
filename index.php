@@ -2,6 +2,10 @@
 session_start();
 include('db.php');
 
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -84,8 +88,11 @@ include('db.php');
             <div class="container mt-5 mb-5">
                 <?php
         if (isset($_SESSION['username'])) {
-          echo '<a href="input.php" class="btn btn-primary">Salary Calculator</a>
+          if ($_SESSION['username'] == 'admin') {
+            echo '<a href="input.php" class="btn btn-primary">Salary Calculator</a>
 ';
+          };
+
           echo '                <a href="add_staff.php" class="btn btn-primary">Add new staff</a>
 ';
           echo '                <a href="logout.php" class="btn btn-danger">Logout</a>

@@ -18,7 +18,15 @@ if (!isset($_SESSION['username'])) {
     <div class="container text-center mt-5">
         <div id="border" class="container border">
             <div class="mt-5">
-                <h1 class="text-primary">All Staff</h1>
+                <?php
+        if (isset($_SESSION['username'])) {
+          echo '                <h1 class="text-primary">User Profile</h1>
+                  ';
+        } else {
+          echo '                <h1 class="text-primary">All Staff</h1>
+';
+        }
+        ?>
             </div>
             <?php
 
@@ -98,6 +106,7 @@ if (!isset($_SESSION['username'])) {
           echo '                <a href="logout.php" class="btn btn-danger">Logout</a>
 ';
         } else {
+          echo 'YOU MUST LOGIN';
           echo '                <a href="login.php" class="btn btn-primary">Login</a>
 ';
         } ?>

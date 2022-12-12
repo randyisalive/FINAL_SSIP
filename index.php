@@ -14,11 +14,11 @@ if (!isset($_SESSION['username'])) {
 <?php include('head.php') ?>
 
 <body>
-    <?php include('navbar.php'); ?>
-    <div class="container text-center mt-5">
-        <div id="border" class="container border">
-            <div class="mt-5">
-                <?php
+  <?php include('navbar.php'); ?>
+  <div class="container text-center mt-5">
+    <div id="border" class="container border">
+      <div class="mt-5">
+        <?php
         if (isset($_SESSION['username'])) {
           echo '                <h1 class="text-primary">User Profile</h1>
                   ';
@@ -27,8 +27,8 @@ if (!isset($_SESSION['username'])) {
 ';
         }
         ?>
-            </div>
-            <?php
+      </div>
+      <?php
 
       //ini buat biar kalo user yg admin aja yg bisa cek all staff. kalo yg bukan staff cuman bisa cek salar dia doang
       // Ganti make session yg diatas
@@ -93,16 +93,17 @@ if (!isset($_SESSION['username'])) {
 
 
 
-            <div class="container mt-5 mb-5">
-                <?php
+      <div class="container mt-5 mb-5">
+        <?php
         if (isset($_SESSION['username'])) {
           if ($_SESSION['username'] == 'admin') {
             echo '<a href="input.php" class="btn btn-primary">Salary Calculator</a>
 ';
+            echo '                <a href="add_staff.php" class="btn btn-primary">Add new staff</a>
+';
           };
 
-          echo '                <a href="add_staff.php" class="btn btn-primary">Add new staff</a>
-';
+
           echo '                <a href="logout.php" class="btn btn-danger">Logout</a>
 ';
         } else {
@@ -110,11 +111,14 @@ if (!isset($_SESSION['username'])) {
           echo '                <a href="login.php" class="btn btn-primary">Login</a>
 ';
         } ?>
-            </div>
-        </div>
-
+      </div>
     </div>
+
+  </div>
+  <div class="mt-5">
     <?php include('footer.php') ?>
+
+  </div>
 </body>
 
 </html>

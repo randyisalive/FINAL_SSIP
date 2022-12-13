@@ -1,11 +1,25 @@
+<style>
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    color: black;
+    text-align: center;
+    background-color: 248, 249, 250;
+}
+</style>
+
+
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
+<footer class="footer font-small blue">
 
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="/"> MDBootstrap.com</a>
     </div>
     <!-- Copyright -->
+
 </footer>
 <!-- Footer -->

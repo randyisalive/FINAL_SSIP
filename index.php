@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('db.php');
-
 if (!isset($_SESSION['username'])) {
   header("Location: login.php");
 }
@@ -97,7 +96,7 @@ if (!isset($_SESSION['username'])) {
         <?php
         if (isset($_SESSION['username'])) {
           if ($_SESSION['username'] == 'admin') {
-            echo '<a href="input.php" class="btn btn-primary">Salary Calculator</a>
+            echo '<a href="salary.php" class="btn btn-primary">Salary Calculator</a>
 ';
             echo '                <a href="add_staff.php" class="btn btn-primary">Add new staff</a>
 ';

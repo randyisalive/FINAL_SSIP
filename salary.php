@@ -211,7 +211,7 @@ session_start();
             echo '</select>
     <input type="text" name="salary_save" value="';
             echo $hol_annual;
-            echo '" class="form-control">
+            echo '" class="hidden" style="display: none;">
     <div class="d-grid gap-2 mt-3">
         <input type="submit" class="btn btn-primary" value="Saved total salary to designated staff">
     </div>

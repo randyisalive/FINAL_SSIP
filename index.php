@@ -73,7 +73,7 @@ if (!isset($_SESSION['username'])) {
             echo $email;
             echo
             '</td>
-                        <td>';
+                        <td>$ ';
             echo $salary;
             echo '</td>
                     </tr>';

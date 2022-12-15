@@ -1,5 +1,5 @@
 <?php
-
+include('head.php');
 include('db.php');
 
 $username = $_POST['username'];
@@ -20,5 +20,5 @@ if ($row = $result->fetch_assoc()) {
     $_SESSION['salary'] = $row['salary'];
     header('Location: index.php');
 } else {
-    echo 'Wrong Credentials';
+    echo '<h1 class="text-danger text-center mt-5">Wrong Credentials</h1>';
 }

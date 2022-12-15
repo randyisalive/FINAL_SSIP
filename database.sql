@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 12:55 PM
+-- Generation Time: Dec 15, 2022 at 06:59 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -47,6 +47,14 @@ CREATE TABLE `saved` (
   `time_saved` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `saved`
+--
+
+INSERT INTO `saved` (`id`, `users_id`, `salary`, `time_saved`) VALUES
+(4, 1, '105589.44', '2022-12-15'),
+(7, 2, '696833.28', '2022-12-15');
+
 -- --------------------------------------------------------
 
 --
@@ -61,16 +69,17 @@ CREATE TABLE `users` (
   `profile_picture` varchar(255) DEFAULT NULL,
   `age` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
-  `salary` varchar(255) NOT NULL
+  `salary` varchar(255) NOT NULL,
+  `FullName` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `profile_picture`, `age`, `department`, `salary`) VALUES
-(1, 'rei', 'rei', 'rei@gmail.com', 'Test_image.jpg', '20', 'IT Consultant', '$10.000'),
-(2, 'admin', 'admin', 'admin@gmail.com', 'admin.jpg', '21', 'IT Consultant', '');
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `profile_picture`, `age`, `department`, `salary`, `FullName`) VALUES
+(1, 'rei', 'rei', 'rei@gmail.com', 'Test_image.jpg', '20', 'IT Consultant', '105589.44', 'Rahmandi Fitra Madenda'),
+(2, 'admin', 'admin', 'admin@gmail.com', 'admin.jpg', '21', 'IT Consultant', '696833.28', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -88,14 +97,16 @@ ALTER TABLE `department`
 --
 ALTER TABLE `saved`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_id` (`users_id`);
+  ADD UNIQUE KEY `users_id` (`users_id`),
+  ADD KEY `salary` (`salary`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `department` (`department`);
+  ADD KEY `department` (`department`),
+  ADD KEY `salary` (`salary`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -111,7 +122,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `saved`
 --
 ALTER TABLE `saved`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -124,8 +135,15 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `saved`
+--
+ALTER TABLE `saved`
+  ADD CONSTRAINT `saved_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department`) REFERENCES `department` (`department`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department`) REFERENCES `department` (`department`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`salary`) REFERENCES `saved` (`salary`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;

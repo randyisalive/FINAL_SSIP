@@ -24,7 +24,7 @@
                             <input type="password" name="password" class="form-control" required />
                         </div>
 
-                        <div class="text-center mt-3">
+                        <div class="text-center mt-5 mb-5">
                             <input type="submit" name="submit" class="btn btn-primary" value="Login" />
 
                         </div>
@@ -34,11 +34,15 @@
 
         </div>
 
-    </div>
 
+    </div>
+    <div class="mt-5">
+        <?php include('footer.php') ?>
+
+    </div>
 
 </body>
 
-<?php include('footer.php') ?>
+
 
 </html>

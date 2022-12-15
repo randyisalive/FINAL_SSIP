@@ -17,6 +17,7 @@ if ($row = $result->fetch_assoc()) {
     $_SESSION['profile_picture'] = $row['profile_picture'];
     $_SESSION['age'] = $row['age'];
     $_SESSION['department'] = $row['department'];
+    $_SESSION['salary'] = $row['salary'];
     header('Location: index.php');
 } else {
     echo 'Wrong Credentials';

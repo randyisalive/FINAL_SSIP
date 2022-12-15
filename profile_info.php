@@ -25,7 +25,9 @@ include('db.php');
                     <span>Age: </span>
                     <span><?php echo $_SESSION['age'] ?></span><br>
                     <span>Department: </span>
-                    <span><?php echo $_SESSION['department'] ?></span>
+                    <span><?php echo $_SESSION['department'] ?></span><br>
+                    <span>Your Salary: </span>
+                    <span>$ <?php echo $_SESSION['salary'] ?></span>
                 </div>
 
 

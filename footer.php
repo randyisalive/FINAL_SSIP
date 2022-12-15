@@ -17,7 +17,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">
-        <a href="/">Group name </a>
+        <p class="text-danger">Group Name</p> <!-- ADD FOOTER  -->
     </div>
     <!-- Copyright -->
 

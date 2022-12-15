@@ -26,6 +26,7 @@
 
                         <div class="text-center mt-3">
                             <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+
                         </div>
                     </div>
                 </form>
@@ -37,7 +38,7 @@
 
 
 </body>
-<br><br><br><br>
+
 <?php include('footer.php') ?>
 
 </html>

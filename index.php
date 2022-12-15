@@ -35,6 +35,7 @@ if (!isset($_SESSION['username'])) {
       if (isset($_SESSION['username'])) {
 
         if ($_SESSION['username'] == 'admin') {
+
           echo '<div class="container">
                 <table class="table">
                     <tr>
@@ -44,6 +45,7 @@ if (!isset($_SESSION['username'])) {
                         <th>Age</th>
                         <th>Email</th>
                         <th>Salary</th>
+                        <th>Option</th>
                     </tr>
                     ';
 
@@ -75,7 +77,17 @@ if (!isset($_SESSION['username'])) {
             '</td>
                         <td>$ ';
             echo $salary;
-            echo '</td>
+            echo '</td>';
+            echo '<td>';
+            echo '<a href="edit_admin_priv.php?id=';
+            echo $id;
+            echo '';
+            echo '" class="btn btn-warning">Setting Profile</a>
+            ';
+            echo '</td>';
+            echo '<td>';
+            echo '</td>';
+            echo '
                     </tr>';
           }
 
@@ -103,6 +115,7 @@ if (!isset($_SESSION['username'])) {
 
 
           echo '                <a href="logout.php" class="btn btn-danger">Logout</a>
+          <a href="edit_staff.php" class="btn btn-primary">Edit Profile</a>
 ';
         } else {
           echo 'YOU MUST LOGIN';
@@ -113,6 +126,8 @@ if (!isset($_SESSION['username'])) {
         </div>
 
     </div>
+
+
     <div class="mt-5">
         <?php include('footer.php') ?>
 

@@ -37,10 +37,7 @@
 
 
     </div>
-    <div class="mt-5">
-        <?php include('footer.php') ?>
 
-    </div>
 
 </body>
 

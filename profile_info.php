@@ -21,21 +21,48 @@ include('db.php');
                                 echo 'static/img/';
                                 echo $_SESSION['profile_picture'];
                             }
-                            ?>" alt="NO PROFILE PICTURE" class="img-thumbnail">
+                            ?>" alt="NO PROFILE PICTURE" class="img-thumbnail mt-3 mb-3">
 
             </div>
             <div class="col">
                 <div class="container mt-3">
-                    <span>Full Name: </span>
-                    <span><?php echo $_SESSION['username'] ?></span><br>
-                    <span>Email: </span>
-                    <span><?php echo $_SESSION['email'] ?></span><br>
-                    <span>Age: </span>
-                    <span><?php echo $_SESSION['age'] ?></span><br>
-                    <span>Department: </span>
-                    <span><?php echo $_SESSION['department'] ?></span><br>
-                    <span>Your Salary: </span>
-                    <span>$ <?php echo $_SESSION['salary'] ?></span>
+                    <table class="table table-border table-primary table-striped">
+                        <tr>
+                            <td>Full Name: </td>
+                            <td> <?php echo $_SESSION['username'] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email:
+                            </td>
+                            <td><span><?php echo $_SESSION['email'] ?></span></td>
+                        </tr>
+                        <tr>
+                            <td>Age: </td>
+                            <td> <span><?php echo $_SESSION['age'] ?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Department: </td>
+                            <td> <span><?php echo $_SESSION['department'] ?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salary: </td>
+                            <td> <?php
+                                    if ($_SESSION['salary'] == '') {
+                                        echo '<p class="text-danger">NOT SET</p>';
+                                    } else {
+                                        echo '<span>$';
+                                        echo $_SESSION['salary'];
+                                        echo '</span>
+                                ';
+                                    } ?>
+
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
 
 

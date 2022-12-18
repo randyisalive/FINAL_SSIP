@@ -43,7 +43,7 @@ include('navbar.php');
 
                 <div class="container mt-3">
                     <span>Profile picture</span>
-                    <input type="file" name="profile_picture" required class="form-control">
+                    <input type="file" name="profile_picture" class="form-control">
                 </div>
 
                 <div class="container mt-4">

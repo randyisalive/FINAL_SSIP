@@ -66,6 +66,7 @@ if (!isset($_SESSION['username'])) {
           $data_staff = mysqli_query($db_connection, $sql_1);
           while ($row = $data_staff->fetch_assoc()) {
             $num++;
+            $id = $row['id'];
             $name = $row['username'];
             $age = $row['age'];
             $email = $row['email'];

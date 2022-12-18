@@ -13,7 +13,15 @@ include('db.php');
     <div class="border">
         <div class="row">
             <div class="col">
-                <img src="static/img/Test_image.jpg" alt="pp" class="img-thumbnail">
+                <img src="<?php
+                            if ($_SESSION['profile_picture'] == '') {
+                                echo 'static/img/';
+                                echo 'pp.jpeg';
+                            } else {
+                                echo 'static/img/';
+                                echo $_SESSION['profile_picture'];
+                            }
+                            ?>" alt="NO PROFILE PICTURE" class="img-thumbnail">
 
             </div>
             <div class="col">

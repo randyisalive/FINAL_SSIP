@@ -98,7 +98,8 @@ if (!isset($_SESSION['username'])) {
                     <span>Profile Picture: </span>
                 </div>
                 <div class="col">
-                    <input type="file" name="file" value="<?php echo $_SESSION['profile_picture'] ?>">
+                    <input type="file" name="file" value="<?php echo $_SESSION['profile_picture'] ?>"
+                        class="form-control">
 
                 </div>
 

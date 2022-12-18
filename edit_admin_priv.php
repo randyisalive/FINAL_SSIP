@@ -19,7 +19,7 @@ $row = $result->fetch_assoc();
 
 <?php include('navbar.php'); ?>
 <div class="container mt-5">
-    <form action="process_edit_staff.php" method="post" class="form-control">
+    <form action="process_edit_staff.php?id=<?php echo $id; ?>" method="post" class="form-control">
         <div class="container text-center mb-5 mt-5">
 
             <h1>

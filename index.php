@@ -37,6 +37,7 @@ if (!isset($_SESSION['username'])) {
 
         if ($_SESSION['username'] == 'admin') {
 
+
           echo '<div class="container">
                 <table class="table">
                     <tr>
@@ -89,8 +90,17 @@ if (!isset($_SESSION['username'])) {
             echo $email;
             echo
             '</td>
-                        <td>$ ';
-            echo $salary;
+            ';
+            echo '
+                        <td> ';
+            if ($salary == '') {
+              echo '    <p class="text-danger">NOT SET</p>
+              ';
+            } else {
+              echo '<p class="text-success">$';
+              echo $salary;
+              echo ' </p>';
+            }
             echo '</td>';
             echo '<td>';
             echo '<a href="edit_admin_priv.php?id=';
@@ -150,8 +160,6 @@ if (!isset($_SESSION['username'])) {
         </div>
 
     </div>
-
-
     <div class="mt-5">
         <?php include('footer.php') ?>
 

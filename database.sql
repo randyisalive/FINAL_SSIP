@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Dec 15, 2022 at 02:09 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
-=======
--- Generation Time: Dec 18, 2022 at 10:37 AM
+-- Generation Time: Dec 18, 2022 at 12:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
->>>>>>> edit-profile
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,8 +18,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
-=======
 -- Table structure for table `department`
 --
 
@@ -40,12 +32,14 @@ CREATE TABLE `department` (
 
 INSERT INTO `department` (`id`, `department`) VALUES
 (1, 'IT Consultant'),
-(2, 'Public Relations');
+(3, 'Manager'),
+(5, 'Marketing\r\n'),
+(2, 'Public Relations'),
+(4, 'Software Engineer');
 
 -- --------------------------------------------------------
 
 --
->>>>>>> edit-profile
 -- Table structure for table `users`
 --
 
@@ -66,25 +60,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `profile_picture`, `age`, `department`, `salary`, `FullName`) VALUES
-<<<<<<< HEAD
-(1, 'Rahmandi', 'rei', 'rei@gmail.com', 'Test_image.jpg', '20', 'IT Consultant', '9456.48', 'RAHMANDI FITRA MADENDA'),
-(2, 'admin', 'admin', 'admin', 'admin.jpg', '20', 'Public Relations', '696833.28', 'RoyalColony');
-=======
-(1, 'rei', 'rei', 'rei@gmail.com', 'Test_image.jpg', '20', 'IT Consultant', '105589.44', 'Rahmandi Fitra Madenda'),
-(6, 'admin', 'admin', 'admin', NULL, '19', 'Public Relations', '', 'Admin Full name'),
-(7, 'Jane', 'jane', 'jane@gmail.com', NULL, '19', 'Public Relations', '', 'Jane Doe'),
-(8, 'balakotan', 'balakotan', 'rmadenda30@gmail.com', NULL, '14', 'IT Consultant', '', 'Rabbani Madenda'),
-(9, 'hansen', 'hansen', 'hansen@gmail.com', NULL, '19', 'IT Consultant', '', 'Hansen Christopher'),
-(10, 'iman', 'iman', 'iman@gmail.com', NULL, '22', 'IT Consultant', '', 'Iman');
->>>>>>> edit-profile
+(1, 'Rendy', 'rei', 'rei', 'Screenshot_20221215_124056.png', '20', 'Software Engineer', '105589.44', 'RAHMANDI FITRA MADENDA'),
+(7, 'Jane', 'jane', 'jane@gmail.com', NULL, '19', 'Public Relations', '28800', 'Jane Doe'),
+(8, 'balakotan', 'balakotan', 'balakotan', NULL, '14', 'Manager', '24000', 'Rabbani Madenda'),
+(9, 'hansen', 'hansen', 'hansen', 'Screenshot_20221207_192608.png', '19', 'IT Consultant', '28800', 'HANSEN CHRISTOPHER'),
+(10, 'iman', 'iman', 'iman', NULL, '22', 'IT Consultant', '', 'Iman'),
+(13, 'admin', 'admin', 'admin', NULL, '20', 'Software Engineer', '672000', 'rahmandi fitra madenda');
 
 --
 -- Indexes for dumped tables
 --
 
 --
-<<<<<<< HEAD
-=======
 -- Indexes for table `department`
 --
 ALTER TABLE `department`
@@ -92,7 +79,6 @@ ALTER TABLE `department`
   ADD UNIQUE KEY `department` (`department`);
 
 --
->>>>>>> edit-profile
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -105,23 +91,16 @@ ALTER TABLE `users`
 --
 
 --
-<<<<<<< HEAD
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-=======
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
->>>>>>> edit-profile
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

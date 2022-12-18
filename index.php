@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
             <div class="mt-5">
                 <?php
         if (isset($_SESSION['username'])) {
-          echo '                <h1 class="text-primary">User Profile</h1>
+          echo '                <h1 class="text-primary border-bottom pb-3 mb-5">User Profile</h1>
                   ';
         } else {
           echo '                <h1 class="text-primary">All Staff</h1>
@@ -54,7 +54,7 @@ if (!isset($_SESSION['username'])) {
           $sql = "SELECT * FROM users";
           $result = mysqli_query($db_connection, $sql);
 
-          $limit = 10;
+          $limit = 5;
           $pages = isset($_GET['pages']) ? (int)$_GET['pages'] : 1;
           $first_page = ($pages > 1) ? ($pages * $limit) - $limit : 0;
 
@@ -122,7 +122,7 @@ if (!isset($_SESSION['username'])) {
 
 
           for ($x = 1; $x <= $total_pages; $x++) {
-            echo '              <li class="page-item"><a class="page-link" href="?pages=';
+            echo '              <li class="page-item ms-1"><a class="page-link" href="?pages=';
             echo $x;
             echo '">';
             echo $x;
@@ -160,10 +160,7 @@ if (!isset($_SESSION['username'])) {
         </div>
 
     </div>
-    <div class="mt-5">
-        <?php include('footer.php') ?>
 
-    </div>
 </body>
 
 </html>

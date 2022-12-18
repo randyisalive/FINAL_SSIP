@@ -35,7 +35,6 @@ if (!isset($_SESSION['username'])) {
                                 <select name="time_pay" id="" class="form-control">
                                     <option value="hour">Hour</option>
                                     <option value="day">Day</option>
-                                    <option value="week">Week</option>
                                 </select>
 
 
@@ -227,5 +226,3 @@ if (!isset($_SESSION['username'])) {
     ?>
 
 </div>
-<?php include('footer.php');
-?>

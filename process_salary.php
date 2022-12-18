@@ -43,11 +43,4 @@ if ($time_pay == 'hour') {
     $hol_bWeekly = 2 * $hol_weekly;
     $hol_monthly = 4 * $hol_weekly;
     $hol_annual = 12 * $hol_monthly;
-} else if ($time_pay == 'week') {
-    $week = 7;
-    $weekly = $idr;
-    $x = $hour / $days; // SATUAN JAM
-    $daily = $weekly / $days;
-    $hourly = $daily / $x;
-    $bi_weekly = 2 * $weekly;
 }

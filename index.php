@@ -5,6 +5,7 @@ if (!isset($_SESSION['username'])) {
   header("Location: login.php");
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +52,21 @@ if (!isset($_SESSION['username'])) {
 
           $sql = "SELECT * FROM users";
           $result = mysqli_query($db_connection, $sql);
-          while ($row = $result->fetch_assoc()) {
-            $id  = $row['id'];
+
+          $limit = 10;
+          $pages = isset($_GET['pages']) ? (int)$_GET['pages'] : 1;
+          $first_page = ($pages > 1) ? ($pages * $limit) - $limit : 0;
+
+          $previous = $pages - 1;
+          $next = $pages + 1;
+          $total_data = mysqli_num_rows($result);
+          $total_pages = ceil($total_data / $limit);
+          $sql_1 = "SELECT * FROM users limit $first_page, $limit";
+          $num = $first_page;
+          $data_staff = mysqli_query($db_connection, $sql_1);
+          while ($row = $data_staff->fetch_assoc()) {
+            $num++;
+            $id = $row['id'];
             $name = $row['username'];
             $age = $row['age'];
             $email = $row['email'];
@@ -60,7 +74,7 @@ if (!isset($_SESSION['username'])) {
             $department = $row['department'];
             echo '<tr>
           <td>';
-            echo $id;
+            echo $num;
             echo '</td>
                         <td>';
             echo $name;
@@ -93,14 +107,24 @@ if (!isset($_SESSION['username'])) {
 
           echo '</table>
 
-            </div>';
+            </div><nav aria-label="Page navigation example">
+            <ul class="pagination">';
+
+
+          for ($x = 1; $x <= $total_pages; $x++) {
+            echo '              <li class="page-item"><a class="page-link" href="?pages=';
+            echo $x;
+            echo '">';
+            echo $x;
+            echo '</a></li>
+';
+          }
+          echo '</ul>
+          </nav>';
         } else {
           include('profile_info.php');
         }
-      }
-
-
-      ?>
+      } ?>
 
 
 

@@ -14,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 
 <?php include('navbar.php'); ?>
 <div class="container">
-    <form action="process_edit_staff.php" method="post" class="form-control">
+    <form action="process_edit_staff.php" method="post" class="form-control" enctype="multipart/form-data">
         <div class="container text-center mb-5 mt-5">
             <h1>
                 <?php echo strtoupper($_SESSION['username']); ?> Profile
@@ -85,6 +85,20 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <div class="col">
                     <input type="number" name="age" class="form-control" value="<?php echo $_SESSION['age'] ?>">
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col">
+                    <span>Profile Picture: </span>
+                </div>
+                <div class="col">
+                    <input type="file" name="file" value="<?php echo $_SESSION['profile_picture'] ?>">
 
                 </div>
 

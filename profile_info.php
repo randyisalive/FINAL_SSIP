@@ -29,7 +29,7 @@ include('db.php');
                     <table class="table table-border table-primary table-striped">
                         <tr>
                             <td>Full Name: </td>
-                            <td> <?php echo $_SESSION['username'] ?>
+                            <td> <?php echo $_SESSION['FullName'] ?>
                             </td>
                         </tr>
                         <tr>

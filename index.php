@@ -150,6 +150,7 @@ if (!isset($_SESSION['username'])) {
 
           echo '                <a href="logout.php" class="btn btn-danger">Logout</a>
           <a href="edit_staff.php" class="btn btn-primary">Edit Profile</a>
+          <a href="see_all_staff.php" class="btn btn-primary">See All Staff</a>
 ';
         } else {
           echo 'YOU MUST LOGIN';

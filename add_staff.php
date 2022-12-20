@@ -54,7 +54,7 @@ include('navbar.php');
                         </div>
                         <div class="col">
                             <select name="department" id="" class="form-control">
-                                //Show department option//
+                                //Show Department Options
                                 <?php
                                 $sql = "SELECT * FROM department";
                                 $result = mysqli_query($db_connection,  $sql);
